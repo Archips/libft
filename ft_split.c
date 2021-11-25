@@ -6,7 +6,7 @@
 /*   By: athirion <athirion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 15:24:45 by athirion          #+#    #+#             */
-/*   Updated: 2021/11/25 14:11:21 by athirion         ###   ########.fr       */
+/*   Updated: 2021/11/25 16:19:47 by athirion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,16 @@ static char	*ft_malloc_word(char const *s, char c)
 	i = 0;
 	while (s[i] && s[i] != c)
 		i ++;
-	word = (char *)malloc(sizeof(char) * (i + 1));
-	if (word)
+	word = (char *)malloc(sizeof(char) * i + 1);
+	if (!word)
+		return (0);
+	i = 0;
+	while (s[i] && s[i] != c)
 	{
-		i = 0;
-		while (s[i] && s[i] != c)
-		{
-			word[i] = s[i];
-			i ++;
-		}
-		word[i] = '\0';
+		word[i] = s[i];
+		i ++;
 	}
+	word[i] = '\0';
 	return (word);
 }
 

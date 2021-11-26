@@ -6,7 +6,7 @@
 /*   By: athirion <athirion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 15:22:59 by athirion          #+#    #+#             */
-/*   Updated: 2021/11/25 14:21:35 by athirion         ###   ########.fr       */
+/*   Updated: 2021/11/26 09:43:48 by athirion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t			index;
-	char			*temp;
+	unsigned char	*temp;
 	unsigned char	uc;
 
-	uc = (unsigned int) c;
+	uc = (unsigned char) c;
 	if (!b)
 		return (b);
 	temp = b;

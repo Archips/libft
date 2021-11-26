@@ -6,7 +6,7 @@
 /*   By: athirion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 17:42:56 by athirion          #+#    #+#             */
-/*   Updated: 2021/11/25 23:00:14 by BigZozyo         ###   ########.fr       */
+/*   Updated: 2021/11/26 10:02:15 by athirion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,3 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
-
-/*void	ft_lstiter(t_list *lst, void (*f)(void *))
-{
-	t_list	*temp;
-
-	temp = lst;
-	while (temp)
-	{
-		(*f)(temp->content);
-		temp = temp->next;
-	}
-}*/

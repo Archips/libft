@@ -6,7 +6,7 @@
 /*   By: athirion <athirion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 15:26:57 by athirion          #+#    #+#             */
-/*   Updated: 2021/11/25 14:13:22 by athirion         ###   ########.fr       */
+/*   Updated: 2021/11/26 10:05:44 by athirion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	char	*str;
+	unsigned int	i;
+	char			*str;
 
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (str)

@@ -6,16 +6,16 @@
 /*   By: athirion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:06:16 by athirion          #+#    #+#             */
-/*   Updated: 2021/11/25 14:08:03 by athirion         ###   ########.fr       */
+/*   Updated: 2021/11/26 10:00:54 by athirion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_nb_len(int n)
+static size_t	ft_nb_len(int n)
 {
-	int		len;
-	long	nb;
+	size_t		len;
+	long		nb;
 
 	len = 0;
 	nb = n;
@@ -34,9 +34,9 @@ static int	ft_nb_len(int n)
 
 char	*ft_itoa(int n)
 {
-	int		len;
-	long	nb;
-	char	*str;
+	size_t		len;
+	long		nb;
+	char		*str;
 
 	len = ft_nb_len(n);
 	nb = (long) n;

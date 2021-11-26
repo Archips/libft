@@ -6,16 +6,16 @@
 /*   By: athirion <athirion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 15:24:45 by athirion          #+#    #+#             */
-/*   Updated: 2021/11/25 16:19:47 by athirion         ###   ########.fr       */
+/*   Updated: 2021/11/26 10:04:40 by athirion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_words(char const *s, char c)
+static size_t	ft_count_words(char const *s, char c)
 {
-	int	i;
-	int	words;
+	int		i;
+	size_t	words;
 
 	i = 0;
 	words = 0;
@@ -33,17 +33,25 @@ static int	ft_count_words(char const *s, char c)
 	return (words);
 }
 
+static char	*ft_free_tab(char **tab, int i)
+{
+	while (tab[i--])
+		free((void *)tab[i]);
+	free(tab);
+	return (NULL);
+}
+
 static char	*ft_malloc_word(char const *s, char c)
 {
-	int		i;
-	char	*word;
+	size_t		i;
+	char		*word;
 
 	i = 0;
 	while (s[i] && s[i] != c)
 		i ++;
-	word = (char *)malloc(sizeof(char) * i + 1);
+	word = (char *)malloc(sizeof(char) * (i + 1));
 	if (!word)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (s[i] && s[i] != c)
 	{
@@ -57,26 +65,27 @@ static char	*ft_malloc_word(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		words;
 	char	**tab;
 
 	i = 0;
-	words = ft_count_words(s, c);
-	tab = (char **)malloc(sizeof(char *) * (words + 1));
-	if (tab)
+	tab = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	if (!tab)
+		return (NULL);
+	while (*s)
 	{
-		while (*s)
-		{
-			if (*s != c)
+		if (*s != c)
+		{	
+			tab[i++] = ft_malloc_word(s, c);
+			if (!tab[i - 1])
 			{	
-				tab[i] = ft_malloc_word(s, c);
-				i ++;
-				while (*s && *s != c)
-					s++;
-			}	
-			while (*s && *s == c)
+				ft_free_tab(tab, (i - 1));
+				return (NULL);
+			}
+			while (*s && *s != c)
 				s++;
-		}
+		}	
+		while (*s && *s == c)
+			s++;
 	}		
 	tab[i] = 0;
 	return (tab);

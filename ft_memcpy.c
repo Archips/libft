@@ -6,7 +6,7 @@
 /*   By: athirion <athirion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 15:22:36 by athirion          #+#    #+#             */
-/*   Updated: 2021/11/26 10:03:39 by athirion         ###   ########.fr       */
+/*   Updated: 2021/11/27 14:35:25 by athirion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	d_cpy = (char *) dst;
 	s_cpy = (char *) src;
 	if (!dst || !src)
-		return (0);
+		return (dst);
 	while (i < n)
 	{
 		d_cpy[i] = s_cpy[i];

@@ -14,6 +14,10 @@ SRCS = ft_atoi.c \
 	ft_memcpy.c \
 	ft_memmove.c \
 	ft_memset.c \
+	ft_printf.c \
+	ft_printf_fmt1.c \
+	ft_printf_fmt2.c \
+	ft_printf_utils.c \
 	ft_putchar_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
@@ -34,6 +38,8 @@ SRCS = ft_atoi.c \
 	ft_substr.c \
 	ft_tolower.c \
 	ft_toupper.c \
+	get_next_line.c \
+	get_next_line_utils.c \
 
 SRCS_B = ft_lstadd_front.c \
 	ft_lstclear.c \

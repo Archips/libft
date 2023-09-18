@@ -6,11 +6,12 @@
 /*   By: athirion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 14:58:12 by athirion          #+#    #+#             */
-/*   Updated: 2021/12/07 09:58:50 by athirion         ###   ########.fr       */
+/*   Updated: 2023/09/18 13:48:41 by athirion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_printf.h"
 
 int	ft_len_newline(char *str)
 {

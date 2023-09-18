@@ -6,11 +6,12 @@
 /*   By: athirion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 09:58:44 by athirion          #+#    #+#             */
-/*   Updated: 2021/12/07 09:57:40 by athirion         ###   ########.fr       */
+/*   Updated: 2023/09/18 13:48:19 by athirion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "libft.h"
 
 char	*ft_update_temp(char *temp)
 {

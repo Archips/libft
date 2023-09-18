@@ -1,81 +1,70 @@
 .PHONY: all clean fclean re
 
-SRCS = ft_atoi.c \
-	ft_bzero.c \
-	ft_calloc.c \
-	ft_isalnum.c \
-	ft_isalpha.c \
-	ft_isascii.c \
-	ft_isdigit.c \
-	ft_isprint.c \
-	ft_itoa.c \
-	ft_memchr.c \
-	ft_memcmp.c \
-	ft_memcpy.c \
-	ft_memmove.c \
-	ft_memset.c \
-	ft_printf.c \
-	ft_printf_fmt1.c \
-	ft_printf_fmt2.c \
-	ft_printf_utils.c \
-	ft_putchar_fd.c \
-	ft_putendl_fd.c \
-	ft_putnbr_fd.c \
-	ft_putstr_fd.c \
-	ft_split.c \
-	ft_strchr.c \
-	ft_strdup.c \
-	ft_striteri.c \
-	ft_strjoin.c \
-	ft_strlcat.c \
-	ft_strlcpy.c \
-	ft_strlen.c \
-	ft_strmapi.c \
-	ft_strncmp.c \
-	ft_strnstr.c \
-	ft_strrchr.c \
-	ft_strtrim.c \
-	ft_substr.c \
-	ft_tolower.c \
-	ft_toupper.c \
-	get_next_line.c \
-	get_next_line_utils.c \
+SRCS = src/ft_atoi.c \
+	src/ft_bzero.c \
+	src/ft_calloc.c \
+	src/ft_isalnum.c \
+	src/ft_isalpha.c \
+	src/ft_isascii.c \
+	src/ft_isdigit.c \
+	src/ft_isprint.c \
+	src/ft_itoa.c \
+	src/ft_memchr.c \
+	src/ft_memcmp.c \
+	src/ft_memcpy.c \
+	src/ft_memmove.c \
+	src/ft_memset.c \
+	src/ft_putchar_fd.c \
+	src/ft_putendl_fd.c \
+	src/ft_putnbr_fd.c \
+	src/ft_putstr_fd.c \
+	src/ft_split.c \
+	src/ft_strchr.c \
+	src/ft_strdup.c \
+	src/ft_striteri.c \
+	src/ft_strjoin.c \
+	src/ft_strlcat.c \
+	src/ft_strlcpy.c \
+	src/ft_strlen.c \
+	src/ft_strmapi.c \
+	src/ft_strncmp.c \
+	src/ft_strnstr.c \
+	src/ft_strrchr.c \
+	src/ft_strtrim.c \
+	src/ft_substr.c \
+	src/ft_tolower.c \
+	src/ft_toupper.c \
+	src/ft_lstadd_front.c \
+	src/ft_lstclear.c \
+	src/ft_lstadd_back.c \
+	src/ft_lstdelone.c \
+	src/ft_lstiter.c \
+	src/ft_lstlast.c \
+	src/ft_lstnew.c \
+	src/ft_lstsize.c \
+	src/ft_lstmap.c\
 
-SRCS_B = ft_lstadd_front.c \
-	ft_lstclear.c \
-	ft_lstadd_back.c \
-	ft_lstdelone.c \
-	ft_lstiter.c \
-	ft_lstlast.c \
-	ft_lstnew.c \
-	ft_lstsize.c \
-	ft_lstmap.c\
-
-OBJS = ${SRCS:.c=.o}
-OBJS_B = ${SRCS_B:.c=.o}
+OBJS = $(patsubst src/%.c,obj/%.o,$(SRCS))
 NAME = libft.a
 CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -c
 
-all: ${NAME}
+all: obj $(NAME)
 
-${NAME}: ${OBJS}
-	ar rcs ${NAME} ${OBJS}
+obj:
+	mkdir -p obj
 
-bonus : ${OBJS} ${OBJS_B}
-	ar rcs ${NAME} ${OBJS} ${OBJS_B}
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-${OBJS}: ${SRCS}
-	${CC} ${CFLAGS} ${SRCS}
+obj/%.o: src/%.c
+	$(CC) $(CFLAGS) $< -o $@
 
-${OBJS_B}: ${SRCS_B}
-	${CC} ${CFLAGS} ${SRCS_B}
-	
-clean: 
-	${RM} ${OBJS} ${OBJS_B}
+clean:
+	$(RM) -r obj
 
 fclean: clean
-	${RM} ${NAME}
+	$(RM) $(NAME)
 
 re: fclean all

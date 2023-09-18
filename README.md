@@ -21,9 +21,5 @@ This project serves as a foundational tool for your programming curriculum, help
 
 ## Author
 
-[Archibald Thirion]
-
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
+[Archibald Thirion](https://github.com/Archips)
 

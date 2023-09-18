@@ -6,7 +6,7 @@ The "libft" project is a C library containing a collection of essential function
 
 - Replicate libc functions with your own implementations.
 - Create new utility functions to enhance your library.
-- Bonus section focuses on linked list manipulation functions.
+- Create linked list manipulation functions.
 - Use a Makefile for easy compilation and library creation.
 
 This project serves as a foundational tool for your programming curriculum, helping you improve your C programming skills and build a valuable resource for future projects.

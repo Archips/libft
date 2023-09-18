@@ -14,6 +14,10 @@ SRCS = src/ft_atoi.c \
 	src/ft_memcpy.c \
 	src/ft_memmove.c \
 	src/ft_memset.c \
+	src/ft_printf.c \
+	src/ft_printf_fmt1.c \
+	src/ft_printf_fmt2.c \
+	src/ft_printf_utils.c \
 	src/ft_putchar_fd.c \
 	src/ft_putendl_fd.c \
 	src/ft_putnbr_fd.c \
@@ -43,12 +47,14 @@ SRCS = src/ft_atoi.c \
 	src/ft_lstnew.c \
 	src/ft_lstsize.c \
 	src/ft_lstmap.c\
+	src/get_next_line.c\
+	src/get_next_line_utils.c
 
 OBJS = $(patsubst src/%.c,obj/%.o,$(SRCS))
 NAME = libft.a
 CC = gcc
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror -c
+CFLAGS = -Wall -Wextra -Werror -c -g3
 
 all: obj $(NAME)
 

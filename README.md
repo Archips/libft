@@ -17,6 +17,7 @@ This project serves as a foundational tool for your programming curriculum, help
 2. Compile the library using the provided Makefile.
 3. Include the `libft.h` header in your C projects.
 4. Use the `libft.a` library in your projects.
+5. Use this command to test it with a test main.c `gcc -Wall -Wextra -Werror main.c -L. -lft` 
 
 ## Author
 

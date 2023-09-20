@@ -2,6 +2,10 @@
 
 The "libft" project is a C library containing a collection of essential functions, replicating some standard C library functions with the 'ft_' prefix ('ft' stands for forty-two). It also includes additional utility functions and a bonus section for linked list manipulation.
 
+## Score
+
+-  125%
+
 ## Project Highlights
 
 - Replicate libc functions with your own implementations.
